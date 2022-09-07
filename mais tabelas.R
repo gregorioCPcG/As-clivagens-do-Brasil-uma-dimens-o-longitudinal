@@ -456,3 +456,154 @@ plotg <- plot_coefs(modelo1, modelo2,modelo3, modelo4, modelo5,
                      point.shape = FALSE,
                      rescale.distributions=TRUE)
 plotg
+
+library(marginaleffects)
+
+a1 <- plot_cap(modelo1, condition = c("AGE"))
+a2 <- plot_cap(modelo2, condition = c("AGE"))
+a3 <- plot_cap(modelo3, condition = c("AGE"))
+a4 <- plot_cap(modelo4, condition = c("AGE"))
+a5 <- plot_cap(modelo5, condition = c("AGE"))
+
+grid.arrange(a1,a2,a3,a4,a5, nrow=2)
+summary(modelo1)
+
+df1$EducationLevel <- as.factor(df1$Education_Level)
+df2$EducationLevel <- as.factor(df2$Education_Level)
+df3$EducationLevel <- as.factor(df3$Education_Level)
+df4$EducationLevel <- as.factor(df4$Education_Level)
+df5$EducationLevel <- as.factor(df5$Education_Level)
+modelo1b <- lm(MR1 ~ SEX+AGE+EducationLevel+
+                Employment_Status+Scale_of_Incomes+Settlement_size+
+                Etnic_Group+PostMaterialistIndex+Interest_in_Politics,
+              data=df1)
+modelo2b <- lm(MR1 ~ SEX+AGE+EducationLevel+
+                Employment_Status+Scale_of_Incomes+Settlement_size+
+                Etnic_Group+PostMaterialistIndex+Interest_in_Politics,
+              data=df2)
+modelo3b<- lm(MR1 ~ SEX+AGE+EducationLevel+
+                Employment_Status+Scale_of_Incomes+Settlement_size+
+                Etnic_Group+PostMaterialistIndex+Interest_in_Politics,
+              data=df3)
+modelo4b <- lm(MR1 ~ SEX+AGE+EducationLevel+
+                Employment_Status+Scale_of_Incomes+Settlement_size+
+                Etnic_Group+PostMaterialistIndex+Interest_in_Politics,
+              data=df4)
+modelo5b <- lm(MR1 ~ SEX+AGE+EducationLevel+
+                Employment_Status+Scale_of_Incomes+Settlement_size+
+                Etnic_Group+PostMaterialistIndex+Interest_in_Politics,
+              data=df5)
+summary(modelo1)
+summary(modelo1b)# pra testar
+
+b1 <- plot_cap(modelo1b, condition = c("EducationLevel"))
+b2 <- plot_cap(modelo2b, condition = c("EducationLevel"))
+b3 <- plot_cap(modelo3b, condition = c("EducationLevel"))
+b4 <- plot_cap(modelo4b, condition = c("EducationLevel"))
+b5 <- plot_cap(modelo5b, condition = c("EducationLevel"))
+
+grid.arrange(b1,b2,b3,b4,b5, nrow=2)
+table(as.factor(moreno_clivagem_brasil2018$X051))
+print(moreno_clivagem_brasil2018$X051)
+
+
+df5$Branco <- as.factor(df5$X051)
+summary(df5$Branco)
+levels(df5$Branco) <- c('Não-Branco','Branco')
+modelo5bc <- lm(MR1 ~ SEX+AGE+EducationLevel+
+                 Employment_Status+Scale_of_Incomes+Settlement_size+
+                 Branco+PostMaterialistIndex+Interest_in_Politics,
+               data=df5)
+plot_cap(modelo5bc, condition = c("Branco"))
+
+
+df1$PostMaterialist <- as.factor(df1$PostMaterialistIndex)
+df2$PostMaterialist <- as.factor(df2$PostMaterialistIndex)
+df3$PostMaterialist <- as.factor(df3$PostMaterialistIndex)
+df4$PostMaterialist <- as.factor(df4$PostMaterialistIndex)
+df5$PostMaterialist <- as.factor(df5$PostMaterialistIndex)
+modelo1bb <- lm(MR1 ~ SEX+AGE+EducationLevel+
+                 Employment_Status+Scale_of_Incomes+Settlement_size+
+                 Etnic_Group+PostMaterialist+Interest_in_Politics,
+               data=df1)
+modelo2bb <- lm(MR1 ~ SEX+AGE+EducationLevel+
+                 Employment_Status+Scale_of_Incomes+Settlement_size+
+                 Etnic_Group+PostMaterialist+Interest_in_Politics,
+               data=df2)
+modelo3bb<- lm(MR1 ~ SEX+AGE+EducationLevel+
+                Employment_Status+Scale_of_Incomes+Settlement_size+
+                Etnic_Group+PostMaterialist+Interest_in_Politics,
+              data=df3)
+modelo4bb <- lm(MR1 ~ SEX+AGE+EducationLevel+
+                 Employment_Status+Scale_of_Incomes+Settlement_size+
+                 Etnic_Group+PostMaterialist+Interest_in_Politics,
+               data=df4)
+modelo5bb <- lm(MR1 ~ SEX+AGE+EducationLevel+
+                 Employment_Status+Scale_of_Incomes+Settlement_size+
+                 Etnic_Group+PostMaterialist+Interest_in_Politics,
+               data=df5)
+summary(modelo1)
+summary(modelo1bb)# pra testar
+
+b1b <- plot_cap(modelo1bb, condition = c("PostMaterialist"))
+b2b <- plot_cap(modelo2bb, condition = c("PostMaterialist"))
+b3b <- plot_cap(modelo3bb, condition = c("PostMaterialist"))
+b4b <- plot_cap(modelo4bb, condition = c("PostMaterialist"))
+b5b <- plot_cap(modelo5bb, condition = c("PostMaterialist"))
+
+grid.arrange(b1b,b2b,b3b,b4b,b5b, nrow=2)
+summary(df1$Settlement_size)
+summary(df1$Interest_in_Politics)
+
+
+
+
+grid.arrange(b1bb,b2bb,b3bb,b4bb,b5bb, nrow=2)
+
+
+
+
+
+b1bb <- plot_cap(modelo1bb, condition = c("Settlement_size"))
+b2bb <- plot_cap(modelo2bb, condition = c("Settlement_size"))
+b3bb <- plot_cap(modelo3bb, condition = c("Settlement_size"))
+b4bb <- plot_cap(modelo4bb, condition = c("Settlement_size"))
+b5bb <- plot_cap(modelo5bb, condition = c("Settlement_size"))
+
+grid.arrange(b1bb,b2bb,b3bb,b4bb,b5bb, nrow=2)
+
+
+df1$Interest_inPolitics <- as.factor(df1$Interest_in_Politics)
+df2$Interest_inPolitics <- as.factor(df2$Interest_in_Politics)
+df3$Interest_inPolitics <- as.factor(df3$Interest_in_Politics)
+df4$Interest_inPolitics <- as.factor(df4$Interest_in_Politics)
+df5$Interest_inPolitics <- as.factor(df5$Interest_in_Politics)
+
+modelo1ba <- lm(MR1 ~ SEX+AGE+EducationLevel+
+                  Employment_Status+Scale_of_Incomes+SettlementSize+
+                  Etnic_Group+PostMaterialistIndex+Interest_inPolitics,
+                data=df1)
+modelo2ba <- lm(MR1 ~ SEX+AGE+EducationLevel+
+                  Employment_Status+Scale_of_Incomes+SettlementSize+
+                  Etnic_Group+PostMaterialistIndex+Interest_inPolitics,
+                data=df2)
+modelo3ba<- lm(MR1 ~ SEX+AGE+EducationLevel+
+                 Employment_Status+Scale_of_Incomes+SettlementSize+
+                 Etnic_Group+PostMaterialistIndex+Interest_inPolitics,
+               data=df3)
+modelo4ba <- lm(MR1 ~ SEX+AGE+EducationLevel+
+                  Employment_Status+Scale_of_Incomes+SettlementSize+
+                  Etnic_Group+PostMaterialistIndex+Interest_inPolitics,
+                data=df4)
+modelo5ba <- lm(MR1 ~ SEX+AGE+EducationLevel+
+                  Employment_Status+Scale_of_Incomes+SettlementSize+
+                  Etnic_Group+PostMaterialistIndex+Interest_inPolitics,
+                data=df5)
+
+b1bb <- plot_cap(modelo1ba, condition = c("Interest_inPolitics"))
+b2bb <- plot_cap(modelo2ba, condition = c("Interest_inPolitics"))
+b3bb <- plot_cap(modelo3ba, condition = c("Interest_inPolitics"))
+b4bb <- plot_cap(modelo4ba, condition = c("Interest_inPolitics"))
+b5bb <- plot_cap(modelo5ba, condition = c("Interest_inPolitics"))
+
+grid.arrange(b1bb,b2bb,b3bb,b4bb,b5bb, nrow=2)
