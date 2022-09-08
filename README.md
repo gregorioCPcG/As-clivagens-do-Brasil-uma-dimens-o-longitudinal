@@ -8,7 +8,7 @@ Autores:
 
 -Gregório Unbehaun Leal da Silva (UFSC)
 
--Lucas de Carvalho de Amorim (UFSC)
+-Lucas de Carvalho de Amorim (UnB)
 
 EM caso de dúvidas pode-se contatar os autores pelo e-mail: cienciapoliticaporgregorio@gmail.com
 
