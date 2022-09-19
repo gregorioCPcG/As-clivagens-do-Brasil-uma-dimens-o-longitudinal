@@ -2181,6 +2181,76 @@ table(df1$PT)
 
 library(lm.beta)
 
+
+modelo11 <- lm(MR1 ~ SEX+AGE+Education_Level+
+                Scale_of_Incomes+Settlement_size+
+                Etnic_Group+PostMaterialistIndex+Interest_in_Politics+PT+
+                 Ideology+Sem_Religiao+
+                 Catolico,
+              data=df1)
+summary(modelo11)#valores estimados
+modelo11x <- lm.beta(modelo11)
+tab_model(modelo11x, show.ci = F, auto.label = T, show.se = T,collapse.se = T, wrap.labels = 60, p.style = "stars")
+
+modelo12 <- lm(MR1 ~ SEX+AGE+Education_Level+
+                 Scale_of_Incomes+Settlement_size+
+                 Etnic_Group+PostMaterialistIndex+Interest_in_Politics+PT+
+                 Ideology+Sem_Religiao+
+                 Catolico,
+               data=df2)
+summary(modelo12)#valores estimados
+modelo12x <- lm.beta(modelo12)
+#tab_model(modelo12x, show.ci = F, auto.label = T, show.se = T,collapse.se = T, wrap.labels = 60, p.style = "stars")
+
+modelo13 <- lm(MR1 ~ SEX+AGE+Education_Level+
+                 Scale_of_Incomes+Settlement_size+
+                 Etnic_Group+PostMaterialistIndex+Interest_in_Politics+PT+
+                 Ideology+Sem_Religiao+
+                 Catolico,data=df3)
+summary(modelo13)#valores estimados
+modelo13x <- lm.beta(modelo13)
+#tab_model(modelo13x, show.ci = F, auto.label = T, show.se = T,collapse.se = T, wrap.labels = 60, p.style = "stars")
+
+modelo14 <- lm(MR1 ~ SEX+AGE+Education_Level+
+                 Scale_of_Incomes+Settlement_size+
+                 Etnic_Group+PostMaterialistIndex+Interest_in_Politics+PT+
+                 Ideology+Sem_Religiao+
+                 Catolico,data=df4)
+summary(modelo14)#valores estimados
+modelo14x <- lm.beta(modelo14)
+#tab_model(modelo14x, show.ci = F, auto.label = T, show.se = T,collapse.se = T, wrap.labels = 60, p.style = "stars")
+
+modelo15 <- lm(MR1 ~ SEX+AGE+Education_Level+
+                 Scale_of_Incomes+Settlement_size+
+                 Etnic_Group+PostMaterialistIndex+Interest_in_Politics+PT+
+                 Ideology+Sem_Religiao+
+                 Catolico,data=df5)
+summary(modelo15)#valores estimados
+modelo15x <- lm.beta(modelo15)
+
+tab_model(modelo11x,modelo12x,modelo13x,modelo14x,modelo15x,
+          show.ci = F, auto.label = T, show.se = T,collapse.se = T,
+          wrap.labels = 60, p.style = "stars")
+
+tab_model(modelo11,modelo12,modelo13,modelo14,modelo15,
+          show.ci = F, auto.label = T, show.se = T,collapse.se = T,
+          wrap.labels = 60, p.style = "stars")
+
+
+
+plot_models(modelo11, modelo12, modelo13, modelo14, modelo15, m.labels = c("1991", "1997", "2006","2014","2018"),
+            auto.label=T,show.values = FALSE, 
+            show.p = T, p.shape = TRUE, digits=4, std.est=TRUE, 
+            p.threshold = c(0.05, 0.01, 0.001), 
+            vline.color = "#edd840",dot.size = 3, spacing=0.7, ci.lvl=0.95, grid=F)+
+  theme_bw()+theme( legend.title = element_text(color = "blue", size = 14),
+                    legend.text = element_text(size = 12),axis.title.x = element_text(size = 14), 
+                    axis.text.x = element_text(size=14), axis.text.y = element_text(size=16))+
+  ggtitle("")+
+  theme(plot.title = element_text(family="Georgia", colour="black", size=14))
+
+# inserindo profissoes
+
 modelo11 <- lm(MR1 ~ SEX+AGE+Education_Level+
                  Scale_of_Incomes+Settlement_size+
                  Etnic_Group+PostMaterialistIndex+Interest_in_Politics+PT+
