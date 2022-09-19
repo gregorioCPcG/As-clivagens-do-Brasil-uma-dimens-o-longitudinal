@@ -3026,3 +3026,93 @@ p <- ggpredict(modelo11114, c("Ideology","SEX","Settlement_size"),ci.lvl = 0.90)
 plot(p)
 p <- ggpredict(modelo11115, c("Ideology","SEX","Settlement_size"),ci.lvl = 0.90) 
 plot(p)
+
+
+# tabela modern gender gap ####
+modelo11d <- lm(MR1 ~ SEX+AGE+Education_Level+
+                    Scale_of_Incomes+Settlement_size+
+                    Etnic_Group+PostMaterialistIndex+Interest_in_Politics+PT+
+                    Ideologia+Sem_Religiao+
+                    Catolico,
+                  data=df1)
+
+modelo12d <- lm(MR1 ~ SEX+AGE+Education_Level+
+                    Scale_of_Incomes+Settlement_size+
+                    Etnic_Group+PostMaterialistIndex+Interest_in_Politics+PT+
+                    Ideologia+Sem_Religiao+
+                    Catolico,
+                  data=df2)
+
+
+
+modelo13d <- lm(MR1 ~ SEX+AGE+Education_Level+
+                    Scale_of_Incomes+Settlement_size+
+                    Etnic_Group+PostMaterialistIndex+Interest_in_Politics+PT+
+                    Ideologia+Sem_Religiao+
+                    Catolico,data=df3)
+
+
+
+modelo14d <- lm(MR1 ~ SEX+AGE+Education_Level+
+                    Scale_of_Incomes+Settlement_size+
+                    Etnic_Group+PostMaterialistIndex+Interest_in_Politics+PT+
+                    Ideologia+Sem_Religiao+
+                    Catolico,data=df4)
+
+
+modelo15d <- lm(MR1 ~ SEX+AGE+Education_Level+
+                    Scale_of_Incomes+Settlement_size+
+                    Etnic_Group+PostMaterialistIndex+Interest_in_Politics+PT+
+                    Ideologia+Sem_Religiao+
+                    Catolico,data=df5)
+
+predictions(modelo11d, newdata = datagrid(Settlement_size= 1, SEX="FEM",Ideologia="Direita" ))#mulher de cidade pequena e de direita
+
+predictions(modelo11d, newdata = datagrid(Settlement_size= 8, SEX="FEM",Ideologia="Esquerda" ))#mulher de cidade grande e de esquerda
+predictions(modelo11d, newdata = datagrid(Settlement_size= 1, SEX="MASC",Ideologia="Direita" ))#homem de cidade pequena e de direita
+
+predictions(modelo11d, newdata = datagrid(Settlement_size= 8, SEX="MASC",Ideologia="Esquerda" ))#homem de cidade grande e de esquerda
+#
+predictions(modelo12d, newdata = datagrid(Settlement_size= 1, SEX="FEM",Ideologia="3" ))#mulher de cidade pequena e de direita
+
+predictions(modelo12d, newdata = datagrid(Settlement_size= 8, SEX="FEM",Ideologia="1" ))#mulher de cidade grande e de esquerda
+predictions(modelo12d, newdata = datagrid(Settlement_size= 1, SEX="MASC",Ideologia="3" ))#homem de cidade pequena e de direita
+
+predictions(modelo12d, newdata = datagrid(Settlement_size= 8, SEX="MASC",Ideologia="1" ))#homem de cidade grande e de esquerda
+#
+predictions(modelo13d, newdata = datagrid(Settlement_size= 1, SEX="FEM",Ideologia="3" ))#mulher de cidade pequena e de direita
+
+predictions(modelo13d, newdata = datagrid(Settlement_size= 8, SEX="FEM",Ideologia="1" ))#mulher de cidade grande e de esquerda
+predictions(modelo13d, newdata = datagrid(Settlement_size= 1, SEX="MASC",Ideologia="3" ))#homem de cidade pequena e de direita
+
+predictions(modelo13d, newdata = datagrid(Settlement_size= 8, SEX="MASC",Ideologia="1" ))#homem de cidade grande e de esquerda
+#
+
+predictions(modelo14d, newdata = datagrid(Settlement_size= 1, SEX="FEM",Ideologia="3" ))#mulher de cidade pequena e de direita
+
+predictions(modelo14d, newdata = datagrid(Settlement_size= 8, SEX="FEM",Ideologia="1" ))#mulher de cidade grande e de esquerda
+predictions(modelo14d, newdata = datagrid(Settlement_size= 1, SEX="MASC",Ideologia="3" ))#homem de cidade pequena e de direita
+
+predictions(modelo14d, newdata = datagrid(Settlement_size= 8, SEX="MASC",Ideologia="1" ))#homem de cidade grande e de esquerda
+
+#
+
+predictions(modelo15d, newdata = datagrid(Settlement_size= 1, SEX="FEM",Ideologia="3" ))#mulher de cidade pequena e de direita
+
+predictions(modelo15d, newdata = datagrid(Settlement_size= 8, SEX="FEM",Ideologia="1" ))#mulher de cidade grande e de esquerda
+predictions(modelo15d, newdata = datagrid(Settlement_size= 1, SEX="MASC",Ideologia="3" ))#homem de cidade pequena e de direita
+
+predictions(modelo15d, newdata = datagrid(Settlement_size= 8, SEX="MASC",Ideologia="1" ))#homem de cidade grande e de esquerda
+
+#
+
+-0.25-0.37
+-0.14-0.15
+-0.08-0.31
+-0.06-.16
+
+-.28-.34
+-0.01-.28
+-0.11-0.28
+-.15-.17
+-.09 -.13
