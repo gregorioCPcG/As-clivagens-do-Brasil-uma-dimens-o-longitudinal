@@ -1,4 +1,4 @@
-# Clivagens estudo exploratório
+# Clivagens do Brasil:  estudo exploratório
 
 Scripts, apêndices e bases apresentadas em "As clivagens do Brasil: uma dimensão longitudinal"
 
