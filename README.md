@@ -1,8 +1,6 @@
 # Clivagens do Brasil:  estudo exploratório
 
-Scripts, apêndices e bases apresentadas em "As clivagens do Brasil: uma dimensão longitudinal"
-
-Autores:
+Autores/Authors:
 
 -Julian Borba (UFSC)
 
@@ -12,4 +10,8 @@ Autores:
 
 EM caso de dúvidas pode-se contatar os autores pelo e-mail: cienciapoliticaporgregorio@gmail.com
 
-As bases constam no branch "Bases"
+Os scripts podem ser solicitados pelo mesmo contato.
+
+In case of doubt, you can contact the authors by email: cienciapoliticaporgregorio@gmail.com
+
+Scripts can be requested by the same contact.
