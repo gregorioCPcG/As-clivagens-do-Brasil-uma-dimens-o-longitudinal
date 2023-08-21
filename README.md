@@ -9,5 +9,3 @@ Authors:
 
 
 In case of doubt, you can contact the authors by email: cienciapoliticaporgregorio@gmail.com
-
-Scripts can be requested by the same contact.
